@@ -119,6 +119,16 @@ class WizardController {
     }
     
     triggerSlideAnimations(slideNumber) {
+        // Trigger welcome slide animation
+        if (slideNumber === 1) {
+            setTimeout(() => {
+                const welcomeCard = document.querySelector('#slide-1 .welcome-card');
+                if (welcomeCard) {
+                    welcomeCard.classList.add('animate-in');
+                }
+            }, 300);
+        }
+        
         // Trigger eating together images animation
         if (slideNumber === 2) {
             setTimeout(() => {
