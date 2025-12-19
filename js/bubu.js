@@ -119,22 +119,19 @@ class BubuController {
                 targetCount = 3;
                 break;
             case 2: // Eating slide
-                targetCount = 6;
+                targetCount = 8;
                 break;
             case 3: // Sleeping slide
-                targetCount = 10;
-                break;
-            case 4: // Creating slide
                 targetCount = 15;
                 break;
-            case 5: // Hair slide
-                targetCount = 20;
+            case 4: // Hair slide
+                targetCount = 22;
                 break;
-            case 6: // Final slide
+            case 5: // Final slide
                 targetCount = 30;
                 break;
             default:
-                targetCount = Math.min(slideNumber * 4, 30);
+                targetCount = Math.min(slideNumber * 5, 30);
         }
         
         // Show images progressively with staggered animation

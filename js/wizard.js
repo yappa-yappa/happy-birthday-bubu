@@ -2,7 +2,7 @@
 class WizardController {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 7; // 0-6
+        this.totalSlides = 6; // 0-5
         this.isTransitioning = false;
         this.backgroundImages = [
             'assets/images/her pic (1).jpg',
