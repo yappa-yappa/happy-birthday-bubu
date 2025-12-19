@@ -76,7 +76,7 @@ class PasswordController {
     
     handleCorrectPassword() {
         const errorMessage = document.getElementById('errorMessage');
-        errorMessage.textContent = '✨ Perfect! Welcome to your surprise...';
+        errorMessage.textContent = '✨ Perfect! Welcome to your surprise, bubu...';
         errorMessage.style.color = '#90EE90';
         
         // Add success animation
@@ -96,9 +96,9 @@ class PasswordController {
         const errorMessage = document.getElementById('errorMessage');
         
         const playfulMessages = [
-            "Hmm, that's not quite right... 💭",
+            "Hmm, that's not quite right, bubu... 💭",
             "Close, but not quite there yet! 😊",
-            "Try again, you've got this! 💕",
+            "Try again, you've got this, bubu! 💕",
             "Think about someone special's birthday... 🎂",
             "The date we first celebrated together... 🎉",
             "When did someone very important come into this world? 🌟"
@@ -170,7 +170,7 @@ class PasswordController {
     
     triggerEasterEgg() {
         const errorMessage = document.getElementById('errorMessage');
-        errorMessage.textContent = '🎮 Konami code detected! But you still need the real password 😉';
+        errorMessage.textContent = '🎮 Konami code detected, bubu! But you still need the real password 😉';
         errorMessage.style.color = '#FFD700';
         
         // Add special effect

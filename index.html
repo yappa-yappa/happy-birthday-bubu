@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday ❤️</title>
+    <title>Happy 30th Birthday Jiya ❤️</title>
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/base.css">
@@ -18,27 +18,31 @@
         <div class="background-overlay"></div>
     </div>
 
-    <!-- Global Header with Cake -->
-    <header class="global-header">
-        <div class="cake-container">
-            <div class="decorations"></div>
-                <div class="balloon balloon-1"></div>
-                <div class="balloon balloon-2"></div>
-                <div class="balloon balloon-3"></div>
-            </div>
-            
-            <div class="cake">
-                <div class="cake-base"></div>
-                <div class="cake-frosting"></div>
-                <div class="candles-container" id="candlesContainer"></div>
-            </div>
-            
-            <div class="streamers">
-                <div class="streamer streamer-1"></div>
-                <div class="streamer streamer-2"></div>
-            </div>
-        </div>
-    </header>
+    <!-- Floating Decorations Across Site -->
+    <div class="floating-decorations">
+        <!-- Floating Balloons -->
+        <div class="balloon balloon-1"></div>
+        <div class="balloon balloon-2"></div>
+        <div class="balloon balloon-3"></div>
+        <div class="balloon balloon-4"></div>
+        <div class="balloon balloon-5"></div>
+        
+        <!-- Floating Hearts -->
+        <div class="floating-heart heart-1">💕</div>
+        <div class="floating-heart heart-2">💖</div>
+        <div class="floating-heart heart-3">💝</div>
+        
+        <!-- Sparkles -->
+        <div class="sparkle sparkle-1">✨</div>
+        <div class="sparkle sparkle-2">⭐</div>
+        <div class="sparkle sparkle-3">✨</div>
+        <div class="sparkle sparkle-4">⭐</div>
+        
+        <!-- Bubu Images Container -->
+        <div class="bubu-images" id="bubuContainer"></div>
+    </div>
+
+
 
     <!-- Main Wizard Container -->
     <main class="wizard-container">
@@ -46,7 +50,7 @@
         <section class="wizard-slide active" id="slide-0" data-slide="0">
             <div class="slide-content password-gate">
                 <div class="password-container">
-                    <h1 class="password-title">Enter the magic words...</h1>
+                    <h1 class="password-title">Enter the magic words, bubu...</h1>
                     <div class="password-form">
                         <input type="text" 
                                id="passwordInput" 
@@ -69,9 +73,9 @@
         <section class="wizard-slide" id="slide-1" data-slide="1">
             <div class="slide-content welcome-slide">
                 <div class="content-card">
-                    <div class="slide-emoji">✨</div>
+
                     <p class="slide-text">
-                        This isn't a test. It's just a few things I wanted you to see… slowly.
+                        Bubu... Words cannot describe how important you are to me. Every day with you feels like discovering something beautiful I never knew I was missing. This is just my way of showing you what I see when I look at you.
                     </p>
                     <button class="continue-btn" onclick="nextSlide()">Continue</button>
                 </div>
@@ -82,14 +86,14 @@
         <section class="wizard-slide" id="slide-2" data-slide="2">
             <div class="slide-content moment-slide">
                 <div class="content-card">
-                    <div class="slide-emoji">🍽️</div>
+
                     <div class="moment-image">
                         <img src="assets/images/a bowl of food frmo which we're both eating together.jpg" 
                              alt="Eating together" 
                              class="slide-image">
                     </div>
                     <p class="slide-text">
-                        Some of my favorite memories are the ordinary ones. Eating with you feels like home — not because of the food, but because you're there.
+                        Some of my favorite memories are the ordinary ones, Jiya. Eating with you feels like home — not because of the food, but because you're there.
                     </p>
                     <button class="continue-btn" onclick="nextSlide()">Continue</button>
                 </div>
@@ -100,14 +104,14 @@
         <section class="wizard-slide" id="slide-3" data-slide="3">
             <div class="slide-content moment-slide">
                 <div class="content-card">
-                    <div class="slide-emoji">🛏️</div>
+
                     <div class="moment-image">
                         <img src="assets/images/me holding her in bed, she's wearing my tshirt.jpg" 
                              alt="Sleeping together" 
                              class="slide-image">
                     </div>
                     <p class="slide-text">
-                        Sleeping next to you never felt like closeness by accident. It felt like trust. Like being allowed into someone's quiet.
+                        Sleeping next to you never felt like closeness by accident, bubu. It felt like trust. Like being allowed into someone's quiet.
                     </p>
                     <button class="continue-btn" onclick="nextSlide()">Continue</button>
                 </div>
@@ -118,7 +122,7 @@
         <section class="wizard-slide" id="slide-4" data-slide="4">
             <div class="slide-content moment-slide">
                 <div class="content-card">
-                    <div class="slide-emoji">🚶</div>
+
                     <div class="moment-image">
                         <img src="assets/images/her making the clay model.jpg" 
                              alt="Making clay together" 
@@ -132,7 +136,7 @@
                         </div>
                     </div>
                     <p class="slide-text">
-                        Doing things with you — even small ones — always felt like we were building something.
+                        Doing things with you — even small ones — always felt like we were building something, Jiya.
                     </p>
                     <button class="continue-btn" onclick="nextSlide()">Continue</button>
                 </div>
@@ -143,44 +147,33 @@
         <section class="wizard-slide" id="slide-5" data-slide="5">
             <div class="slide-content moment-slide">
                 <div class="content-card">
-                    <div class="slide-emoji">💇</div>
+
                     <div class="moment-image">
                         <img src="assets/images/we both our hands holding  icecream.jpg" 
                              alt="Holding hands with ice cream" 
                              class="slide-image">
                     </div>
                     <p class="slide-text">
-                        You've been hard on your hair. I've only ever noticed how much of you it carries — softness, chaos, warmth.
+                        You've been hard on your hair, bubu. I've only ever noticed how much of you it carries — softness, chaos, warmth.
                     </p>
                     <button class="continue-btn" onclick="nextSlide()">Continue</button>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 6: Age Difference -->
-        <section class="wizard-slide" id="slide-6" data-slide="6">
-            <div class="slide-content moment-slide">
-                <div class="content-card">
-                    <div class="slide-emoji">⏳</div>
-                    <p class="slide-text">
-                        Our difference never felt like imbalance to me. It felt like choice — and I keep choosing you.
-                    </p>
-                    <button class="continue-btn" onclick="nextSlide()">Continue</button>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Final Slide: Birthday Reveal -->
-        <section class="wizard-slide final-slide" id="slide-7" data-slide="7">
+        <section class="wizard-slide final-slide" id="slide-6" data-slide="6">
             <div class="slide-content birthday-reveal">
                 <div class="content-card">
-                    <div class="slide-emoji">🎉</div>
+
                     <div class="photo-collage" id="photoCollage">
                         <!-- Collage will be populated by JavaScript -->
                     </div>
                     <div class="birthday-message">
-                        <h1 class="birthday-title">Happy Birthday ❤️</h1>
-                        <p class="birthday-subtitle">This is what I see — every day.</p>
+                        <h1 class="birthday-title">Happy 30th Birthday Jiya ❤️</h1>
+                        <p class="birthday-subtitle">This is what I see when I look at you — every day.</p>
                     </div>
                 </div>
             </div>
@@ -193,7 +186,7 @@
     <!-- JavaScript Files -->
     <script src="js/wizard.js"></script>
     <script src="js/password.js"></script>
-    <script src="js/candles.js"></script>
+    <script src="js/bubu.js"></script>
     <script src="js/collage.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 class WizardController {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 8; // 0-7
+        this.totalSlides = 7; // 0-6
         this.isTransitioning = false;
         this.backgroundImages = [
             'assets/images/her pic (1).jpg',
@@ -52,8 +52,8 @@ class WizardController {
             
             // Update visual effects
             this.updateBackgroundBlur();
-            this.updateCandles();
             this.updateDecorations();
+            this.updateBubuImages();
             
             // Special handling for final slide
             if (this.currentSlide === this.totalSlides - 1) {
@@ -74,41 +74,49 @@ class WizardController {
         backgroundEl.style.filter = `blur(${Math.max(blurAmount, minBlur)}px)`;
     }
     
-    updateCandles() {
-        if (window.candleController) {
-            const candlesToLight = Math.floor((this.currentSlide / (this.totalSlides - 1)) * 30);
-            window.candleController.lightCandles(candlesToLight);
-        }
-    }
+
     
     updateDecorations() {
         const balloons = document.querySelectorAll('.balloon');
-        const streamers = document.querySelectorAll('.streamer');
+        const hearts = document.querySelectorAll('.floating-heart');
+        const sparkles = document.querySelectorAll('.sparkle');
         
-        // Show balloons starting from slide 2
-        if (this.currentSlide >= 2) {
+        // Show balloons starting from slide 1
+        if (this.currentSlide >= 1) {
             balloons.forEach((balloon, index) => {
                 setTimeout(() => {
                     balloon.classList.add('visible');
-                }, index * 200);
+                }, index * 300);
             });
         }
         
-        // Show streamers starting from slide 4
-        if (this.currentSlide >= 4) {
-            streamers.forEach((streamer, index) => {
+        // Show hearts starting from slide 2
+        if (this.currentSlide >= 2) {
+            hearts.forEach((heart, index) => {
                 setTimeout(() => {
-                    streamer.classList.add('visible');
-                }, index * 300);
+                    heart.classList.add('visible');
+                }, index * 500);
             });
+        }
+        
+        // Show sparkles starting from slide 3
+        if (this.currentSlide >= 3) {
+            sparkles.forEach((sparkle, index) => {
+                setTimeout(() => {
+                    sparkle.classList.add('visible');
+                }, index * 400);
+            });
+        }
+    }
+    
+    updateBubuImages() {
+        if (window.bubuController) {
+            window.bubuController.showBubuImages(this.currentSlide);
         }
     }
     
     triggerFinalSlideEffects() {
-        // Light all candles
-        if (window.candleController) {
-            window.candleController.lightAllCandles();
-        }
+
         
         // Start confetti
         setTimeout(() => {
@@ -125,12 +133,20 @@ class WizardController {
         }, 1000);
         
         // Show all decorations
-        const decorativeElements = document.querySelectorAll('.balloon, .streamer');
+        const decorativeElements = document.querySelectorAll('.balloon, .floating-heart, .sparkle');
         decorativeElements.forEach((el, index) => {
             setTimeout(() => {
                 el.classList.add('visible');
             }, index * 100);
         });
+        
+        // Special bubu celebration for final slide
+        setTimeout(() => {
+            if (window.bubuController) {
+                window.bubuController.celebrateBubu();
+                window.bubuController.addInteractivity();
+            }
+        }, 2000);
     }
     
     rotateBackgroundImages() {
@@ -162,8 +178,8 @@ class WizardController {
         
         // Update effects
         this.updateBackgroundBlur();
-        this.updateCandles();
         this.updateDecorations();
+        this.updateBubuImages();
     }
 }
 
@@ -247,5 +263,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize confetti controller
     window.confettiController = new ConfettiController();
     
-    console.log('🎂 Birthday wizard initialized!');
+    console.log('🎂 30th Birthday wizard initialized for Jiya!');
 });

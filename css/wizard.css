@@ -1,149 +1,172 @@
 /* Wizard System Styles */
 
-/* Global Header */
-.global-header {
+/* Floating Decorations System */
+.floating-decorations {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    height: 120px;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cake-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Cake Design */
-.cake {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cake-base {
-    width: 100px;
-    height: 60px;
-    background: linear-gradient(45deg, #8B4513, #D2691E);
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.cake-base::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 8px;
-    right: 8px;
-    height: 12px;
-    background: linear-gradient(45deg, #FFB6C1, #FF69B4);
-    border-radius: 6px;
-}
-
-.cake-frosting {
-    position: absolute;
-    top: -15px;
-    left: 5px;
-    right: 5px;
-    height: 20px;
-    background: linear-gradient(45deg, #FFF8DC, #F5DEB3);
-    border-radius: 10px 10px 5px 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.candles-container {
-    position: absolute;
-    top: -35px;
-    left: 0;
-    right: 0;
-    height: 25px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: flex-end;
-}
-
-/* Decorative Elements */
-.decorations {
-    position: absolute;
-    top: -40px;
-    left: -150px;
-    right: -150px;
-    height: 80px;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
+    z-index: 50;
 }
 
+
+
+
+
+/* Floating Balloons */
 .balloon {
     position: absolute;
-    width: 25px;
-    height: 35px;
+    width: 35px;
+    height: 50px;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 1s ease;
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .balloon-1 {
     background: linear-gradient(45deg, #FF69B4, #FF1493);
-    left: 20%;
-    top: 10px;
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
 }
 
 .balloon-2 {
     background: linear-gradient(45deg, #FFB6C1, #FF69B4);
-    right: 20%;
-    top: 5px;
+    top: 25%;
+    right: 15%;
+    animation-delay: 2s;
 }
 
 .balloon-3 {
     background: linear-gradient(45deg, #FF1493, #DC143C);
-    left: 50%;
-    top: 15px;
-    transform: translateX(-50%);
+    top: 40%;
+    left: 20%;
+    animation-delay: 4s;
 }
 
-.streamers {
-    position: absolute;
-    top: -20px;
-    left: -100px;
-    right: -100px;
-    height: 40px;
-    pointer-events: none;
+.balloon-4 {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    top: 60%;
+    right: 25%;
+    animation-delay: 1s;
 }
 
-.streamer {
+.balloon-5 {
+    background: linear-gradient(45deg, #FF8FAB, #FFB6C1);
+    top: 80%;
+    left: 80%;
+    animation-delay: 3s;
+}
+
+/* Floating Hearts */
+.floating-heart {
     position: absolute;
-    width: 3px;
-    height: 30px;
-    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    font-size: 2rem;
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 1s ease;
+    animation: heartFloat 8s ease-in-out infinite;
 }
 
-.streamer-1 {
-    left: 30%;
-    transform: rotate(15deg);
+.heart-1 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
 }
 
-.streamer-2 {
+.heart-2 {
+    top: 70%;
+    left: 15%;
+    animation-delay: 3s;
+}
+
+.heart-3 {
+    top: 50%;
+    right: 20%;
+    animation-delay: 5s;
+}
+
+/* Sparkles */
+.sparkle {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 1s ease;
+    animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+.sparkle-1 {
+    top: 30%;
+    left: 5%;
+    animation-delay: 0.5s;
+}
+
+.sparkle-2 {
+    top: 45%;
+    right: 8%;
+    animation-delay: 2.5s;
+}
+
+.sparkle-3 {
+    top: 65%;
+    left: 25%;
+    animation-delay: 1.5s;
+}
+
+.sparkle-4 {
+    top: 85%;
     right: 30%;
-    transform: rotate(-15deg);
+    animation-delay: 3.5s;
+}
+
+/* Bubu Images */
+.bubu-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 40;
+}
+
+.bubu-image {
+    position: absolute;
+    width: 35px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease;
+    animation: bubuFloat 8s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.bubu-image.visible {
+    opacity: 0.4;
+}
+
+.bubu-image img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Wizard Container */
 .wizard-container {
-    margin-top: 120px;
-    min-height: calc(100vh - 120px);
+    margin-top: 0;
+    min-height: 100vh;
     position: relative;
 }
 

@@ -1,14 +1,17 @@
 /* Animation Styles */
 
-/* Candle Animations */
+/* Beautiful Candle Design */
 .candle {
-    width: 3px;
-    height: 18px;
-    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(to bottom, #FFE135 0%, #FFD700 50%, #FFA500 100%);
     position: relative;
-    opacity: 0.3;
-    transition: opacity 0.6s ease;
-    border-radius: 1px;
+    opacity: 0.4;
+    transition: opacity 0.8s ease;
+    border-radius: 2px;
+    box-shadow: 
+        inset 1px 0 2px rgba(255, 255, 255, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .candle.lit {
@@ -18,13 +21,21 @@
 .candle.lit::after {
     content: '';
     position: absolute;
-    top: -6px;
-    left: -3px;
-    width: 8px;
-    height: 8px;
-    background: radial-gradient(circle, #FF4500 20%, #FFD700 40%, transparent 70%);
+    top: -8px;
+    left: -4px;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(
+        ellipse at center,
+        #FF6B35 0%,
+        #FF8E53 30%,
+        #FFD700 60%,
+        rgba(255, 215, 0, 0.3) 80%,
+        transparent 100%
+    );
     border-radius: 50%;
-    animation: candleFlicker 1.5s ease-in-out infinite alternate;
+    animation: candleFlicker 1.8s ease-in-out infinite alternate;
+    filter: blur(0.5px);
 }
 
 @keyframes candleFlicker {
@@ -50,25 +61,90 @@
     }
 }
 
-/* Balloon Animations */
-.balloon.visible {
-    opacity: 0.8;
-    animation: balloonFloat 4s ease-in-out infinite;
-}
-
-@keyframes balloonFloat {
+/* Floating Animations */
+@keyframes gentleFloat {
     0%, 100% { 
         transform: translateY(0px) rotate(0deg);
     }
     25% {
-        transform: translateY(-8px) rotate(1deg);
+        transform: translateY(-15px) rotate(2deg);
     }
     50% { 
-        transform: translateY(-15px) rotate(0deg);
+        transform: translateY(-25px) rotate(0deg);
     }
     75% {
-        transform: translateY(-8px) rotate(-1deg);
+        transform: translateY(-10px) rotate(-2deg);
     }
+}
+
+@keyframes heartFloat {
+    0%, 100% { 
+        transform: translateY(0px) scale(1);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translateY(-20px) scale(1.1);
+        opacity: 1;
+    }
+    50% { 
+        transform: translateY(-30px) scale(1);
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateY(-15px) scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+@keyframes sparkleFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.6;
+    }
+    50% { 
+        transform: translateY(-10px) rotate(180deg) scale(1.2);
+        opacity: 1;
+    }
+}
+
+.balloon.visible {
+    opacity: 0.8;
+}
+
+.floating-heart.visible {
+    opacity: 0.7;
+}
+
+.sparkle.visible {
+    opacity: 0.8;
+}
+
+/* Bubu Image Animations */
+@keyframes bubuFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg) scale(1.05);
+    }
+    50% { 
+        transform: translateY(-35px) rotate(-3deg) scale(0.95);
+    }
+    75% {
+        transform: translateY(-15px) rotate(7deg) scale(1.02);
+    }
+}
+
+.bubu-image:nth-child(odd) {
+    animation-direction: reverse;
+}
+
+.bubu-image:nth-child(3n) {
+    animation-duration: 10s;
+}
+
+.bubu-image:nth-child(4n) {
+    animation-duration: 6s;
 }
 
 /* Streamer Animations */

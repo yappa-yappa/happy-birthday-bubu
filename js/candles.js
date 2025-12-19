@@ -1,4 +1,4 @@
-// Candle Controller - Manages the 30 birthday candles
+// Candle Controller - Manages the 30 candles for Jiya's 30th birthday
 class CandleController {
     constructor() {
         this.totalCandles = 30;
@@ -19,7 +19,7 @@ class CandleController {
         // Clear existing candles
         candlesContainer.innerHTML = '';
         
-        // Create 30 candles in a nice arrangement
+        // Create 30 candles for her 30th birthday - one for each year
         for (let i = 0; i < this.totalCandles; i++) {
             const candle = document.createElement('div');
             candle.className = 'candle';
@@ -112,8 +112,7 @@ class CandleController {
             const candle = this.candles[index];
             candle.classList.add('lit');
             
-            // Add lighting sound effect (if audio is enabled)
-            this.playLightingSound();
+
             
             // Add special effect for milestone candles
             if (this.isMilestoneCandle(index)) {
@@ -179,29 +178,7 @@ class CandleController {
         }, 3000);
     }
     
-    playLightingSound() {
-        // Create a subtle audio cue (optional)
-        if (typeof Audio !== 'undefined') {
-            try {
-                // Create a simple beep using Web Audio API
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const oscillator = audioContext.createOscillator();
-                const gainNode = audioContext.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(audioContext.destination);
-                
-                oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-                
-                oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + 0.1);
-            } catch (e) {
-                // Audio not supported or blocked
-            }
-        }
-    }
+
     
     // Method to get current lighting progress
     getProgress() {

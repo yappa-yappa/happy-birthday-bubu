@@ -3,6 +3,21 @@ class CollageController {
     constructor() {
         this.collageImages = [
             {
+                src: 'assets/images/her pic (1).jpg',
+                alt: 'Beautiful Jiya 1',
+                special: true
+            },
+            {
+                src: 'assets/images/her pic (2).jpg',
+                alt: 'Beautiful Jiya 2',
+                special: true
+            },
+            {
+                src: 'assets/images/her pic (3).jpg',
+                alt: 'Beautiful Jiya 3',
+                special: true
+            },
+            {
                 src: 'assets/images/her eating pizza (1).jpg',
                 alt: 'Pizza moment 1',
                 special: true
@@ -10,22 +25,7 @@ class CollageController {
             {
                 src: 'assets/images/her eating pizza (2).jpg',
                 alt: 'Pizza moment 2',
-                special: false
-            },
-            {
-                src: 'assets/images/food she cooked for me.jpg',
-                alt: 'Food she cooked',
                 special: true
-            },
-            {
-                src: 'assets/images/we both our hands holding  icecream.jpg',
-                alt: 'Ice cream hands',
-                special: true
-            },
-            {
-                src: 'assets/images/clay models we made (1).jpg',
-                alt: 'Clay creation',
-                special: false
             }
         ];
         
@@ -41,7 +41,7 @@ class CollageController {
         this.isInitialized = true;
         
         // Add loading state
-        collageContainer.innerHTML = '<div class="collage-loading">Loading memories...</div>';
+        collageContainer.innerHTML = '<div class="collage-loading">Loading our memories, bubu...</div>';
         
         // Simulate loading delay for dramatic effect
         setTimeout(() => {
@@ -154,11 +154,11 @@ class CollageController {
     
     showImageMessage(index) {
         const messages = [
-            "Pizza dates are the best dates 🍕",
-            "Every slice shared with love 💕",
-            "The food tastes better when you make it ❤️",
-            "Sweet moments, sweeter hands 🍦",
-            "Creating memories together 🎨"
+            "This is how I see you every day, bubu ✨",
+            "Your smile lights up my world 💕",
+            "Beautiful inside and out ❤️",
+            "Pizza dates with you are the best dates, bubu 🍕",
+            "Every moment with you is precious 💖"
         ];
         
         const message = messages[index] || "A beautiful memory ✨";
