@@ -1,0 +1,304 @@
+/* Animation Styles */
+
+/* Candle Animations */
+.candle {
+    width: 3px;
+    height: 18px;
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    position: relative;
+    opacity: 0.3;
+    transition: opacity 0.6s ease;
+    border-radius: 1px;
+}
+
+.candle.lit {
+    opacity: 1;
+}
+
+.candle.lit::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -3px;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #FF4500 20%, #FFD700 40%, transparent 70%);
+    border-radius: 50%;
+    animation: candleFlicker 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes candleFlicker {
+    0% { 
+        transform: scale(0.9) rotate(-2deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: scale(1.1) rotate(1deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.95) rotate(-1deg);
+        opacity: 0.9;
+    }
+    75% {
+        transform: scale(1.05) rotate(2deg);
+        opacity: 1;
+    }
+    100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.95;
+    }
+}
+
+/* Balloon Animations */
+.balloon.visible {
+    opacity: 0.8;
+    animation: balloonFloat 4s ease-in-out infinite;
+}
+
+@keyframes balloonFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+    50% { 
+        transform: translateY(-15px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+}
+
+/* Streamer Animations */
+.streamer.visible {
+    opacity: 0.7;
+    animation: streamerWave 3s ease-in-out infinite;
+}
+
+@keyframes streamerWave {
+    0%, 100% { 
+        transform: rotate(15deg) scaleY(1);
+    }
+    50% { 
+        transform: rotate(20deg) scaleY(1.1);
+    }
+}
+
+.streamer-2.visible {
+    animation: streamerWave2 3s ease-in-out infinite;
+}
+
+@keyframes streamerWave2 {
+    0%, 100% { 
+        transform: rotate(-15deg) scaleY(1);
+    }
+    50% { 
+        transform: rotate(-20deg) scaleY(1.1);
+    }
+}
+
+/* Confetti Animations */
+.confetti-piece {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    pointer-events: none;
+}
+
+.confetti-square {
+    background: #FFD700;
+    animation: confettiFall 3s linear infinite;
+}
+
+.confetti-circle {
+    background: #FF69B4;
+    border-radius: 50%;
+    animation: confettiFall 3.2s linear infinite;
+}
+
+.confetti-triangle {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid #FF1493;
+    animation: confettiFall 2.8s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Slide Transition Animations */
+.slide-enter {
+    animation: slideEnter 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-exit {
+    animation: slideExit 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideEnter {
+    from {
+        opacity: 0;
+        transform: translateX(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes slideExit {
+    from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50px) scale(0.95);
+    }
+}
+
+/* Content Card Entrance */
+.content-card {
+    animation: cardAppear 1s ease-out 0.3s both;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Button Hover Effects */
+.continue-btn,
+.password-submit {
+    position: relative;
+    overflow: hidden;
+}
+
+.continue-btn::before,
+.password-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.continue-btn:hover::before,
+.password-submit:hover::before {
+    left: 100%;
+}
+
+/* Image Hover Effects */
+.slide-image {
+    transition: all 0.4s ease;
+}
+
+.slide-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Pulse Animation for Important Elements */
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Glow Effect */
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+    }
+}
+
+/* Final Slide Special Animations */
+.final-slide.active .birthday-title {
+    animation: titleReveal 1.5s ease-out 0.5s both;
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.final-slide.active .birthday-subtitle {
+    animation: subtitleReveal 1s ease-out 1s both;
+}
+
+@keyframes subtitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+    .candle.lit::after {
+        width: 6px;
+        height: 6px;
+        top: -4px;
+        left: -2px;
+    }
+    
+    .confetti-piece {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,376 @@
+/* Wizard System Styles */
+
+/* Global Header */
+.global-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cake-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cake Design */
+.cake {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cake-base {
+    width: 100px;
+    height: 60px;
+    background: linear-gradient(45deg, #8B4513, #D2691E);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cake-base::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    right: 8px;
+    height: 12px;
+    background: linear-gradient(45deg, #FFB6C1, #FF69B4);
+    border-radius: 6px;
+}
+
+.cake-frosting {
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    right: 5px;
+    height: 20px;
+    background: linear-gradient(45deg, #FFF8DC, #F5DEB3);
+    border-radius: 10px 10px 5px 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.candles-container {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    right: 0;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+/* Decorative Elements */
+.decorations {
+    position: absolute;
+    top: -40px;
+    left: -150px;
+    right: -150px;
+    height: 80px;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    width: 25px;
+    height: 35px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.balloon-1 {
+    background: linear-gradient(45deg, #FF69B4, #FF1493);
+    left: 20%;
+    top: 10px;
+}
+
+.balloon-2 {
+    background: linear-gradient(45deg, #FFB6C1, #FF69B4);
+    right: 20%;
+    top: 5px;
+}
+
+.balloon-3 {
+    background: linear-gradient(45deg, #FF1493, #DC143C);
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
+}
+
+.streamers {
+    position: absolute;
+    top: -20px;
+    left: -100px;
+    right: -100px;
+    height: 40px;
+    pointer-events: none;
+}
+
+.streamer {
+    position: absolute;
+    width: 3px;
+    height: 30px;
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.streamer-1 {
+    left: 30%;
+    transform: rotate(15deg);
+}
+
+.streamer-2 {
+    right: 30%;
+    transform: rotate(-15deg);
+}
+
+/* Wizard Container */
+.wizard-container {
+    margin-top: 120px;
+    min-height: calc(100vh - 120px);
+    position: relative;
+}
+
+/* Wizard Slides */
+.wizard-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wizard-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    position: relative;
+}
+
+.wizard-slide.exiting {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+/* Slide Content */
+.slide-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Password Gate Specific */
+.password-gate .content-card {
+    max-width: 500px;
+}
+
+.password-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #FFB6C1;
+    font-weight: 300;
+}
+
+.password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.password-input {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border: 2px solid #FF69B4;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: #FF1493;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.4);
+    background: rgba(255, 255, 255, 1);
+}
+
+.error-message {
+    color: #FFB6C1;
+    font-style: italic;
+    margin: 1rem 0;
+    min-height: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.hints-container {
+    margin-top: 2rem;
+}
+
+.hint {
+    margin: 0.8rem 0;
+    padding: 1rem;
+    background: rgba(255, 105, 180, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+}
+
+.hint:hover {
+    background: rgba(255, 105, 180, 0.3);
+    transform: translateY(-2px);
+}
+
+.hint.hidden {
+    display: none;
+}
+
+/* Moment Slides */
+.moment-slide .content-card {
+    max-width: 650px;
+}
+
+.moment-image {
+    margin-bottom: 2rem;
+}
+
+/* Carousel for Clay Images */
+.carousel-container {
+    margin: 1.5rem 0;
+}
+
+.carousel-images {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.carousel-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+    transform: scale(1.05);
+}
+
+/* Final Slide */
+.final-slide .content-card {
+    max-width: 800px;
+    padding: 4rem;
+}
+
+.birthday-message {
+    margin-top: 2rem;
+}
+
+.birthday-title {
+    font-size: 3rem;
+    background: linear-gradient(45deg, #FF69B4, #FFD700, #FF1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.birthday-subtitle {
+    font-size: 1.5rem;
+    color: #FFB6C1;
+    font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .global-header {
+        height: 100px;
+    }
+    
+    .wizard-container {
+        margin-top: 100px;
+        min-height: calc(100vh - 100px);
+    }
+    
+    .wizard-slide {
+        min-height: calc(100vh - 100px);
+        padding: 1rem;
+    }
+    
+    .password-title {
+        font-size: 1.8rem;
+    }
+    
+    .birthday-title {
+        font-size: 2.2rem;
+    }
+    
+    .birthday-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cake-base {
+        width: 80px;
+        height: 50px;
+    }
+    
+    .password-input {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    
+    .birthday-title {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-images {
+        gap: 0.5rem;
+    }
+    
+    .carousel-image {
+        width: 80px;
+        height: 80px;
+    }
+}

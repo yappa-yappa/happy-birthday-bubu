@@ -1,32 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday ❤️</title>
-  <style>
-    body {
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      color: #333;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 3em;
-    }
-    p {
-      font-size: 1.3em;
-      max-width: 600px;
-      margin: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/wizard.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/collage.css">
 </head>
 <body>
-  <h1>Happy Birthday ❤️</h1>
-  <p>
-    To the most beautiful person in my life,<br><br>
-    Today is all about you. I made this little website
-    just to remind you how special you are to me 💕
-  </p>
+    <!-- Background Container -->
+    <div class="background-container"></div>
+        <div class="background-image" id="backgroundImage"></div>
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Global Header with Cake -->
+    <header class="global-header">
+        <div class="cake-container">
+            <div class="decorations"></div>
+                <div class="balloon balloon-1"></div>
+                <div class="balloon balloon-2"></div>
+                <div class="balloon balloon-3"></div>
+            </div>
+            
+            <div class="cake">
+                <div class="cake-base"></div>
+                <div class="cake-frosting"></div>
+                <div class="candles-container" id="candlesContainer"></div>
+            </div>
+            
+            <div class="streamers">
+                <div class="streamer streamer-1"></div>
+                <div class="streamer streamer-2"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Wizard Container -->
+    <main class="wizard-container">
+        <!-- Slide 0: Password Gate -->
+        <section class="wizard-slide active" id="slide-0" data-slide="0">
+            <div class="slide-content password-gate">
+                <div class="password-container">
+                    <h1 class="password-title">Enter the magic words...</h1>
+                    <div class="password-form">
+                        <input type="text" 
+                               id="passwordInput" 
+                               class="password-input" 
+                               placeholder="DD/MM/YYYY"
+                               maxlength="10">
+                        <button class="password-submit" id="passwordSubmit">Enter</button>
+                    </div>
+                    <div class="error-message" id="errorMessage"></div>
+                    <div class="hints-container">
+                        <div class="hint hidden" id="hint1">💡 Need a hint?</div>
+                        <div class="hint hidden" id="hint2">Password is your bf's birthday 😉</div>
+                        <div class="hint hidden" id="hint3">Yes, I kept it on purpose.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 1: Welcome -->
+        <section class="wizard-slide" id="slide-1" data-slide="1">
+            <div class="slide-content welcome-slide">
+                <div class="content-card">
+                    <div class="slide-emoji">✨</div>
+                    <p class="slide-text">
+                        This isn't a test. It's just a few things I wanted you to see… slowly.
+                    </p>
+                    <button class="continue-btn" onclick="nextSlide()">Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Eating Together -->
+        <section class="wizard-slide" id="slide-2" data-slide="2">
+            <div class="slide-content moment-slide">
+                <div class="content-card">
+                    <div class="slide-emoji">🍽️</div>
+                    <div class="moment-image">
+                        <img src="assets/images/a bowl of food frmo which we're both eating together.jpg" 
+                             alt="Eating together" 
+                             class="slide-image">
+                    </div>
+                    <p class="slide-text">
+                        Some of my favorite memories are the ordinary ones. Eating with you feels like home — not because of the food, but because you're there.
+                    </p>
+                    <button class="continue-btn" onclick="nextSlide()">Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Sleeping Together -->
+        <section class="wizard-slide" id="slide-3" data-slide="3">
+            <div class="slide-content moment-slide">
+                <div class="content-card">
+                    <div class="slide-emoji">🛏️</div>
+                    <div class="moment-image">
+                        <img src="assets/images/me holding her in bed, she's wearing my tshirt.jpg" 
+                             alt="Sleeping together" 
+                             class="slide-image">
+                    </div>
+                    <p class="slide-text">
+                        Sleeping next to you never felt like closeness by accident. It felt like trust. Like being allowed into someone's quiet.
+                    </p>
+                    <button class="continue-btn" onclick="nextSlide()">Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Creating Together -->
+        <section class="wizard-slide" id="slide-4" data-slide="4">
+            <div class="slide-content moment-slide">
+                <div class="content-card">
+                    <div class="slide-emoji">🚶</div>
+                    <div class="moment-image">
+                        <img src="assets/images/her making the clay model.jpg" 
+                             alt="Making clay together" 
+                             class="slide-image main-image">
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel-images">
+                            <img src="assets/images/clay models we made (1).jpg" alt="Clay model 1" class="carousel-image">
+                            <img src="assets/images/clay models we made (2).jpg" alt="Clay model 2" class="carousel-image">
+                            <img src="assets/images/clay models we made (3).jpg" alt="Clay model 3" class="carousel-image">
+                        </div>
+                    </div>
+                    <p class="slide-text">
+                        Doing things with you — even small ones — always felt like we were building something.
+                    </p>
+                    <button class="continue-btn" onclick="nextSlide()">Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Hair/Body Affirmation -->
+        <section class="wizard-slide" id="slide-5" data-slide="5">
+            <div class="slide-content moment-slide">
+                <div class="content-card">
+                    <div class="slide-emoji">💇</div>
+                    <div class="moment-image">
+                        <img src="assets/images/we both our hands holding  icecream.jpg" 
+                             alt="Holding hands with ice cream" 
+                             class="slide-image">
+                    </div>
+                    <p class="slide-text">
+                        You've been hard on your hair. I've only ever noticed how much of you it carries — softness, chaos, warmth.
+                    </p>
+                    <button class="continue-btn" onclick="nextSlide()">Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Age Difference -->
+        <section class="wizard-slide" id="slide-6" data-slide="6">
+            <div class="slide-content moment-slide">
+                <div class="content-card">
+                    <div class="slide-emoji">⏳</div>
+                    <p class="slide-text">
+                        Our difference never felt like imbalance to me. It felt like choice — and I keep choosing you.
+                    </p>
+                    <button class="continue-btn" onclick="nextSlide()">Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Slide: Birthday Reveal -->
+        <section class="wizard-slide final-slide" id="slide-7" data-slide="7">
+            <div class="slide-content birthday-reveal">
+                <div class="content-card">
+                    <div class="slide-emoji">🎉</div>
+                    <div class="photo-collage" id="photoCollage">
+                        <!-- Collage will be populated by JavaScript -->
+                    </div>
+                    <div class="birthday-message">
+                        <h1 class="birthday-title">Happy Birthday ❤️</h1>
+                        <p class="birthday-subtitle">This is what I see — every day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- JavaScript Files -->
+    <script src="js/wizard.js"></script>
+    <script src="js/password.js"></script>
+    <script src="js/candles.js"></script>
+    <script src="js/collage.js"></script>
 </body>
 </html>
