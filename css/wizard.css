@@ -163,6 +163,27 @@
     display: block;
 }
 
+/* Mobile adjustments for bubu images */
+@media (max-width: 768px) {
+    .bubu-image {
+        width: 28px;
+    }
+    
+    .bubu-image.visible {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .bubu-image {
+        width: 22px;
+    }
+    
+    .bubu-image.visible {
+        opacity: 0.25;
+    }
+}
+
 /* Wizard Container */
 .wizard-container {
     margin-top: 0;
@@ -260,19 +281,52 @@
     margin-top: 2rem;
 }
 
-.hint {
-    margin: 0.8rem 0;
-    padding: 1rem;
+.hint-button {
     background: rgba(255, 105, 180, 0.2);
-    border-radius: 12px;
+    border: 1px solid rgba(255, 105, 180, 0.4);
+    color: #FFB6C1;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 105, 180, 0.3);
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
-.hint:hover {
+.hint-button:hover {
     background: rgba(255, 105, 180, 0.3);
+    border-color: rgba(255, 105, 180, 0.6);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+}
+
+.hint-button:active {
+    transform: translateY(0);
+}
+
+.hint-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.hint {
+    margin: 0;
+    padding: 1rem;
+    background: rgba(255, 105, 180, 0.15);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 105, 180, 0.25);
+    color: #FFB6C1;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+
+.hint.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hint.hidden {
@@ -370,17 +424,14 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .global-header {
-        height: 100px;
-    }
-    
     .wizard-container {
-        margin-top: 100px;
-        min-height: calc(100vh - 100px);
+        margin-top: 0;
+        min-height: 100vh;
+        padding: 1rem;
     }
     
     .wizard-slide {
-        min-height: calc(100vh - 100px);
+        min-height: 100vh;
         padding: 1rem;
     }
     
@@ -400,17 +451,32 @@
         width: 100px;
         height: 100px;
     }
+    
+    /* Mobile adjustments for moment images */
+    .moment-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .moment-images .slide-image {
+        max-width: 100%;
+        width: 90%;
+    }
 }
 
 @media (max-width: 480px) {
-    .cake-base {
-        width: 80px;
-        height: 50px;
+    .wizard-slide {
+        padding: 0.5rem;
     }
     
     .password-input {
         font-size: 1.1rem;
         padding: 1rem;
+    }
+    
+    .password-title {
+        font-size: 1.5rem;
     }
     
     .birthday-title {
@@ -424,5 +490,13 @@
     .carousel-image {
         width: 80px;
         height: 80px;
+    }
+    
+    .moment-images {
+        gap: 1rem;
+    }
+    
+    .moment-images .slide-image {
+        width: 95%;
     }
 }

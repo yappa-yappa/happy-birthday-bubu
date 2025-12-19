@@ -176,10 +176,15 @@
     .photo-collage {
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
+        margin: 1rem 0;
     }
     
     .collage-image {
         height: 100px;
+    }
+    
+    .final-slide .content-card {
+        padding: 2rem 1rem;
     }
 }
 

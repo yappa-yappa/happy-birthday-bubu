@@ -212,7 +212,7 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .content-card {
+    .content-card:not(.welcome-card) {
         padding: 2rem;
         margin: 1rem;
     }
@@ -221,17 +221,19 @@ p {
         font-size: 1.2rem;
     }
     
-    .slide-emoji {
-        font-size: 3rem;
-    }
-    
     .slide-image {
         height: 200px;
+    }
+    
+    .continue-btn,
+    .password-submit {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .content-card {
+    .content-card:not(.welcome-card) {
         padding: 1.5rem;
     }
     
@@ -243,5 +245,50 @@ p {
     .password-submit {
         padding: 0.8rem 2rem;
         font-size: 1rem;
+    }
+}
+
+/* Mobile Responsive for Welcome Card */
+@media (max-width: 768px) {
+    .welcome-card {
+        max-width: 95%;
+        margin: 1rem;
+    }
+    
+    .welcome-image-container {
+        height: 250px;
+    }
+    
+    .welcome-text-container {
+        padding: 2rem 1.5rem;
+        margin-top: -60px;
+    }
+    
+    .welcome-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-card {
+        max-width: 100%;
+        margin: 0.5rem;
+        border-radius: 15px;
+    }
+    
+    .welcome-image-container {
+        height: 200px;
+    }
+    
+    .welcome-text-container {
+        padding: 1.5rem 1rem;
+        margin-top: -40px;
+    }
+    
+    .welcome-text {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
     }
 }

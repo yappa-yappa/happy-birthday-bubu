@@ -42,9 +42,9 @@ class PasswordController {
     }
     
     setupHints() {
-        const hint1 = document.getElementById('hint1');
+        const hintButton = document.getElementById('hintButton');
         
-        hint1.addEventListener('click', () => {
+        hintButton.addEventListener('click', () => {
             this.showNextHint();
         });
     }
@@ -76,7 +76,7 @@ class PasswordController {
     
     handleCorrectPassword() {
         const errorMessage = document.getElementById('errorMessage');
-        errorMessage.textContent = '✨ Perfect! Welcome to your surprise, bubu...';
+        errorMessage.textContent = '✨ So my gf does remember my birthday 😁...';
         errorMessage.style.color = '#90EE90';
         
         // Add success animation
@@ -108,11 +108,6 @@ class PasswordController {
         errorMessage.textContent = playfulMessages[messageIndex];
         errorMessage.style.color = '#FFB6C1';
         
-        // Show hints based on attempts
-        if (this.attempts >= 2 && this.hintLevel === 0) {
-            this.showHint(1);
-        }
-        
         // Add shake animation to input
         const input = document.getElementById('passwordInput');
         input.classList.add('shake');
@@ -128,30 +123,26 @@ class PasswordController {
     }
     
     showNextHint() {
-        this.hintLevel++;
-        this.showHint(this.hintLevel + 1);
-    }
-    
-    showHint(level) {
-        const hints = [
-            document.getElementById('hint1'),
-            document.getElementById('hint2'),
-            document.getElementById('hint3')
-        ];
+        const hintButton = document.getElementById('hintButton');
+        const hint1 = document.getElementById('hint1');
+        const hint2 = document.getElementById('hint2');
         
-        if (level === 1) {
-            // Hide the "Need a hint?" and show first real hint
-            hints[0].style.display = 'none';
-            hints[1].classList.remove('hidden');
-            hints[1].classList.add('pulse');
-            
-            // Show second hint after delay
-            setTimeout(() => {
-                hints[2].classList.remove('hidden');
-                hints[2].classList.add('pulse');
-            }, 2000);
+        if (this.hintLevel === 0) {
+            // First click: show first hint
+            this.hintLevel = 1;
+            hintButton.textContent = '💡 Another hint?';
+            hint1.classList.remove('hidden');
+            hint1.classList.add('visible');
+        } else if (this.hintLevel === 1) {
+            // Second click: show second hint and hide button
+            this.hintLevel = 2;
+            hint2.classList.remove('hidden');
+            hint2.classList.add('visible');
+            hintButton.style.display = 'none';
         }
     }
+    
+    // Remove the old showHint method as it's no longer needed
     
     // Easter egg: Konami code or special sequence
     setupEasterEgg() {
