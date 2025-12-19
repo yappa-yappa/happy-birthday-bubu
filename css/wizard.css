@@ -288,6 +288,35 @@
     margin-bottom: 2rem;
 }
 
+.moment-images {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.moment-images .slide-image {
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.moment-images .slide-image.animate-in {
+    animation: imageReveal 1.2s ease-out forwards;
+}
+
+.moment-images .slide-image.animate-in:first-child {
+    animation-delay: 0.5s;
+}
+
+.moment-images .slide-image.animate-in:nth-child(2) {
+    animation-delay: 1s;
+}
+
 /* Carousel for Clay Images */
 .carousel-container {
     margin: 1.5rem 0;

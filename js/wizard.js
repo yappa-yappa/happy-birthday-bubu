@@ -50,6 +50,9 @@ class WizardController {
             const nextSlideEl = document.getElementById(`slide-${this.currentSlide}`);
             nextSlideEl.classList.add('active');
             
+            // Trigger special animations for specific slides
+            this.triggerSlideAnimations(this.currentSlide);
+            
             // Update visual effects
             this.updateBackgroundBlur();
             this.updateDecorations();
@@ -115,6 +118,18 @@ class WizardController {
         }
     }
     
+    triggerSlideAnimations(slideNumber) {
+        // Trigger eating together images animation
+        if (slideNumber === 2) {
+            setTimeout(() => {
+                const eatingImages = document.querySelectorAll('#slide-2 .moment-images .slide-image');
+                eatingImages.forEach(img => {
+                    img.classList.add('animate-in');
+                });
+            }, 300); // Small delay to ensure slide is visible
+        }
+    }
+    
     triggerFinalSlideEffects() {
 
         
@@ -175,6 +190,9 @@ class WizardController {
         // Show target slide
         const targetSlideEl = document.getElementById(`slide-${this.currentSlide}`);
         targetSlideEl.classList.add('active');
+        
+        // Trigger special animations for specific slides
+        this.triggerSlideAnimations(this.currentSlide);
         
         // Update effects
         this.updateBackgroundBlur();
